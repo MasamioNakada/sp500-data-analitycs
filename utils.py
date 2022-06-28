@@ -10,14 +10,14 @@ def now_date():
     return current_time
 
 
-def writter(text):
-    path = f"out/reporte-{now_date()}.md"
+def writter(text,path):
+    
     open(path, mode='a').close()
     fd = os.open(path, os.O_RDWR)
     line = str.encode(text)
     os.write(fd, line)
     os.close(fd)
-    return Say().cow_says_good("reporte escrito exitosamente en ./out")
+    return Say().cow_says_good(f"reporte escrito exitosamente en {path}")
 
 
 def enterprise_info(name):

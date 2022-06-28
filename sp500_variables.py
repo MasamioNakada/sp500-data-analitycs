@@ -4,6 +4,9 @@ from cleaning import cleaning
 
 
 def sp500_dict(labels):
+    """Retorna un diccionario con una lista de simbolos
+labels -> lista de simbolos
+size -> Define el límite de descarga"""
     data_dict = {}
     for label in labels[:10]:
         data_dict[label] = yf.download(

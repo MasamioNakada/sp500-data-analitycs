@@ -42,22 +42,24 @@ def visual_report(df):
     axes[1].plot(retornos_intra(df))
     axes[1].set_title(
         'Movimientos intradiarios Agrupados por día de la semana')
-    path = f"./out/report-{now_date()}.png"
+    path = f"./out/best_day-{now_date()}.png"
     plt.tight_layout()
     plt.savefig(path)
     plt.close(fig)
-    return say.cow_says_good('Graficos Generados en ./out')
+    return say.cow_says_good(f'Graficos Generados en {path}')
 
 
-def md_report(df):
+def md_report_best_day(df):
+
+    path = f"out/best_day-{now_date()}.md"
 
     md = f"""![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 # Reporte Mejor día par invertir:
 ## Resumen
-![Report](report-{now_date()}.png)
+![Report](best_day-{now_date()}.png)
 
 Donde *{best_value(df)[0].item()}* el mejor día para invertir teniendo en cuenta el retorno de los movimiento gap
 
-Y *{best_value(df)[1].item()}* el mejor día para invertir teniendo en cuenta el retorno de los movimientos intradiarios"""
+Y *{best_value(df)[1].item()}* el mejor día para invertir teniendo en cuenta el retorno de los movimientos intradiarios."""
 
-    return writter(md)
+    return writter(md, path)
