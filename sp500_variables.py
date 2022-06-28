@@ -4,12 +4,12 @@ from cleaning import cleaning
 
 
 def sp500_dict(labels):
-    data = {}
+    data_dict = {}
     for label in labels[:10]:
-        data[label] = yf.Ticker(label).history(
-            period="max", start='2000-01-01', rounding=2)
+        data_dict[label] = yf.download(
+            f'{label}', period="max", start='2000-01-01', rounding=2)
 
-    return data
+    return data_dict
 
 
 def sp500_all():

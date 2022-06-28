@@ -3,7 +3,7 @@ import pandas as pd
 
 
 from sp500_variables import sp500_all, sp500_dict
-from report import visual_report, md_report
+from report_sp500 import visual_report, md_report
 from cleaning import cleaning
 
 # instaciamos las etiquetas
