@@ -10,8 +10,8 @@ def now_date():
     return current_time
 
 
-def writter(text,path):
-    
+def writter(text, path):
+
     open(path, mode='a').close()
     fd = os.open(path, os.O_RDWR)
     line = str.encode(text)

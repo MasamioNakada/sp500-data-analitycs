@@ -1,7 +1,7 @@
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 # Reporte de Volatilidad SP-500
 ## Gráfico:
-![Report](report_peaks-28_06_2022.png)
+![Report](report_peaks-29_06_2022.png)
 Donde los dias:
 - 04-2003
 - 07-2009

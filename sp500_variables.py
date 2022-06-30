@@ -1,6 +1,8 @@
 import pandas as pd
 import yfinance as yf
-from cleaning import cleaning
+from utils import Say
+
+say = Say()
 
 
 def sp500_dict(labels):
@@ -8,9 +10,12 @@ def sp500_dict(labels):
 labels -> lista de simbolos
 size -> Define el límite de descarga"""
     data_dict = {}
-    for label in labels[:10]:
+    for label in labels:
+        print(f'Cargando {label} from yahoo finance')
         data_dict[label] = yf.download(
             f'{label}', period="max", start='2000-01-01', rounding=2)
+
+    say.cow_says_good(f'{len(labels)} descargados')
 
     return data_dict
 
